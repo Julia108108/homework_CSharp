@@ -1,28 +1,28 @@
 ﻿//Задача 38: Задайте массив вещественных чисел. Найдите разницу между
-// максимальным и минимальным элементов массива.
+// максимальным и минимальным элементом массива.
 
 Console.WriteLine("Введите размер массива  ");
 int size = Convert.ToInt32(Console.ReadLine());
 double[] numbers = new double[size];
 FillArrayRandomNumbers(numbers);
-Console.WriteLine("массив: ");
+Console.WriteLine("Массив: ");
 PrintArray(numbers);
 double min = Int32.MaxValue;
 double max = Int32.MinValue;
 
-for (int z = 0; z < numbers.Length; z++)
+for (int a = 0; a < numbers.Length; a++)
 {
-    if (numbers[z] > max)
+    if (numbers[a] > max)
         {
-            max = numbers[z];
+            max = numbers[a];
         }
-    if (numbers[z] < min)
+    if (numbers[a] < min)
         {
-            min = numbers[z];
+            min = numbers[a];
         }
 }
 
-Console.WriteLine($"всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
+Console.WriteLine($"Всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
 Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
 
 void FillArrayRandomNumbers(double[] numbers)
