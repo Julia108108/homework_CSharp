@@ -3,28 +3,6 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-Console.WriteLine ("Сколько нечётных чисел будет в вашем массиве?: --> ");
-int amount = Convert.ToInt32(Console.ReadLine());
-
-int[] array = new int [amount];
-Random rnd = new Random();
-
-for (int i = 0; i < amount; i++)
-{
-    array[i] = rnd.Next(-99, 100); 
-    Console.Write (array[i] + " ");
-}
-
-int sum = array [1];
-
-for (i = 3; i < amount; i+=2)
-{
-    sum = sum + array[i];
-}
-
-Console.Write($"Сумма элементов, стоящих на нечетных позициях в массиве: {sum}");
-
-//found:
 Console.WriteLine("Введите размер массива  ");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] numbers = new int[size];
@@ -33,10 +11,10 @@ Console.WriteLine("массив: ");
 PrintArray(numbers);
 int sum = 0;
 
-for (int z = 0; z < numbers.Length; z+=2)
-    sum = sum + numbers[z];
+for (int a = 0; a < numbers.Length; a+=2)
+    sum = sum + numbers[a];
 
-    Console.WriteLine($"всего {numbers.Length} чисел, сумма элементов cтоящих на нечётных позициях = {sum}");
+    Console.WriteLine($"В массиве {numbers.Length} чисел, сумма элементов cтоящих на нечётных позициях: {sum}");
 
 void FillArrayRandomNumbers(int[] numbers)
 {
