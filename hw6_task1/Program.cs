@@ -2,9 +2,23 @@
 // Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 0, 7, 8, -2, -2 -> 2
 
+int[] arr = new int[8];
+Random rnd = new Random();
 
-Console.Write("Введите элементы(через пробел): ");
-int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-int count = arr.Count(x => x > 0);
-Console.WriteLine($"Кол-во элементов > 0: {count}");
+for (int i = 0; i < arr.Length; i++)
+{
+    arr[i] = rnd.Next(-100,100);
+}
+
+foreach (var item in arr)
+{
+    System.Console.Write(item + " ");
+}
+
+bool f (int x)
+{
+    return (x > 0);
+}
+
+System.Console.WriteLine("\n" + arr.Count(f));
 
