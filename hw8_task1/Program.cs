@@ -21,7 +21,6 @@ PrintArray(table);
 SortToLower(table);
 Console.WriteLine();
 PrintArray(table);
-//Random rand = new Random();
 
 // Функция заполнения массива рандомно числами от 1 до 9
 void FillArrayRandom(int[,] array)
@@ -35,7 +34,7 @@ void FillArrayRandom(int[,] array)
     }
 }
 
-// Функция сортировки элементов в строке двумерного массива от мин к макс
+// Функция сортировки элементов в строке двумерного массива от макс к мин
 void SortToLower(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -67,4 +66,3 @@ void PrintArray(int[,] array)
     }
     Console.WriteLine();
 }
-
