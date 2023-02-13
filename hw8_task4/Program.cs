@@ -21,26 +21,26 @@ int j = Convert.ToInt32 (Console.ReadLine());
 Console.WriteLine("Напишите количество переменных третьей оси: ");
 int k = Convert.ToInt32 (Console.ReadLine());
 int[,,] array = new int[i, j, k];
-FillArrayByRandom(array);
+//int[ ] arrayInputNumbers =  new int ();
+FillArray(array);
 Print(array);
 Console.WriteLine();
 StringWithIndex(array);
 
-
-void FillArrayByRandom(int[,,] array)
+void FillArray(int[,,] array)
 {
-    Random rnd = new Random();
-    for (int i = 0; i < array.GetLength(0); i++) //
+    //Random rnd = new Random();
+    int count = 10;
+    for (int i = 0; i < array.GetLength(0); i++) 
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             for (int k = 0; k < array.GetLength(2); k++)
-            array [i, j, k] = rnd.Next(10, 100);
+            array [i, j, k] = count;
+            count = count + 3;
         }
     }
 }
-
-
 
 void Print(int[,,] array)
 {
@@ -48,7 +48,7 @@ void Print(int[,,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int k = 0; k < array.GetLength(1); k++)
+            for (int k = 0; k < array.GetLength(2); k++)
             Console.Write($"{array[i, j, k] +  " "}"); 
         }
         Console.WriteLine();
