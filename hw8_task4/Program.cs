@@ -23,9 +23,10 @@ int k = Convert.ToInt32 (Console.ReadLine());
 int[,,] array = new int[i, j, k];
 //int[ ] arrayInputNumbers =  new int ();
 FillArray(array);
-Print(array);
+Print(array,(element, i,j,k)=>$"{element} ");
+Print(array, (element, i,j,k)=>$"{element}({i}, {j}, {k})" );
 Console.WriteLine();
-StringWithIndex(array);
+//StringWithIndex(array); 
 
 void FillArray(int[,,] array)
 {
@@ -42,30 +43,30 @@ void FillArray(int[,,] array)
     }
 }
 
-void Print(int[,,] array)
+void Print(int[,,] array, Func<int, int, int, int,string> formatter)
 {
     for (int i = 0; i < array.GetLength(0); i++) //
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             for (int k = 0; k < array.GetLength(2); k++)
-            Console.Write($"{array[i, j, k] +  " "}"); 
+            Console.Write(formatter(array[i, j, k], i, j ,k)); 
         }
         Console.WriteLine();
     }
     Console.WriteLine();
 }
 
-void StringWithIndex(int[,,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            for (int k = 0; k < array.GetLength(2); k++)
-            {
-                Console.Write($"{array[i, j, k]}({i}, {j}, {k}) ");
-            }
-        }
-    }
-}
+//void StringWithIndex(int[,,] array)
+//{
+//    for (int i = 0; i < array.GetLength(0); i++)
+//    {
+//        for (int j = 0; j < array.GetLength(1); j++)
+//        {
+//            for (int k = 0; k < array.GetLength(2); k++)
+//            {
+//                Console.Write($"{array[i, j, k]}({i}, {j}, {k}) ");
+//            }
+//        }
+//    }
+//}
