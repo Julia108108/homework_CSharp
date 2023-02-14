@@ -63,6 +63,7 @@ void PrintArray(int[,] array)
         {
             Console.Write($"{array[i, j]} ");
         }
+        Console.WriteLine();
     }
-    Console.WriteLine();
+    
 }
