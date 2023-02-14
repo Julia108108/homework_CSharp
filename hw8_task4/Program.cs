@@ -37,8 +37,10 @@ void FillArray(int[,,] array)
         for (int j = 0; j < array.GetLength(1); j++)
         {
             for (int k = 0; k < array.GetLength(2); k++)
-            array [i, j, k] = count;
-            count = count + 3;
+            {
+                array [i, j, k] = count;
+                count = count + 3;
+            }
         }
     }
 }
@@ -50,7 +52,9 @@ void Print(int[,,] array, Func<int, int, int, int,string> formatter)
         for (int j = 0; j < array.GetLength(1); j++)
         {
             for (int k = 0; k < array.GetLength(2); k++)
-            Console.Write(formatter(array[i, j, k], i, j ,k)); 
+            {
+                Console.Write(formatter(array[i, j, k], i, j ,k)); 
+            }
         }
         Console.WriteLine();
     }
