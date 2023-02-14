@@ -14,11 +14,7 @@ FillArrayByRandom(arrayFirst);
 FillArrayByRandom(arraySecond);
 Print(arrayFirst);
 Print(arraySecond);
-Multiply(arrayFirst, arraySecond);
-//Print(Multiply(arrayFirst, arraySecond));
-
-
-
+Print(Multiply(arrayFirst, arraySecond));
 
 
 void FillArrayByRandom(int[,] array)
@@ -46,22 +42,24 @@ void Print(int[,] array)
     Console.WriteLine();
 }
 
-int Multiply(int[,] arrayFirst, int[,] arraySecond);
-if (arrayFirst.GetLength(0) != arraySecond.GetLength(1))
+int[,] Multiply(int[,] arrayFirst, int[,] arraySecond) //возвращаемый тип, название
 {
-    Console.WriteLine("Подобные матрицы нельзя перемножить");
-    return;
-}
-for (int i = 0; i < arrayFirst.GetLength(0); i++)
-{
-    for (int j = 0; j < arraySecond.GetLength(1); j++)
+    int[,] resultArray = new int[2, 2]; 
+    if (arrayFirst.GetLength(0) != arraySecond.GetLength(1))
     {
-        Multiply[i, j] = 0;
-        for (int k = 0; k < arrayFirst.GetLength(1); k++)
+        Console.WriteLine("Подобные матрицы нельзя перемножить");
+    }
+    for (int i = 0; i < arrayFirst.GetLength(0); i++)
+    {
+        for (int j = 0; j < arraySecond.GetLength(1); j++)
         {
-            Multiply[i, j] = Multiply + arrayFirst[i, k] * arraySecond[k, j];
-            return;
+            resultArray[i, j] = 0;
+            for (int k = 0; k < arrayFirst.GetLength(1); k++)
+            {
+                resultArray[i, j] = resultArray[i, j] + arrayFirst[i, k] * arraySecond[k, j];
+
+            }
         }
     }
-    return;
+    return resultArray;
 }
