@@ -5,36 +5,41 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int m = 4;
-int n = 4;
-int[,] array = new int[m, n];
+Console.WriteLine("Введите размер массива");
+int length = Convert.ToInt32(Console.ReadLine());
 
-FillArraySpiral(array);
-PrintArray(array);
-//SortToLower(table);
-//Console.WriteLine();
-//PrintArray(table);
+int[,] table = new int[length, length];
 
-void FillArraySpiral(int[,] array)
+int num = 1;
+int i = 0;
+int j = 0;
+
+while (num <= length * length)
 {
-    for (int i = 0; i < array.GetLength(0); i++) 
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = new Random().Next(1, 10);
-        }
-    }
+    table[i, j] = num;
+    if (i <= j + 1 && i + j < length - 1)
+        ++j;
+    else if (i < j && i + j >= length - 1)
+        ++i;
+    else if (i >= j && i + j > length - 1)
+        --j;
+    else
+        --i;
+    ++num;
 }
+
+PrintArray(table);
 
 void PrintArray(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++) //
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j] +  " "}");
+            Console.Write(array[i, j] + " ");
         }
-        Console.WriteLine();
+        Console.WriteLine("");
     }
-    Console.WriteLine();
 }
+
+
