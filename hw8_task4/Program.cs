@@ -8,12 +8,6 @@
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
-// Решение: как проверить непотворяющ эл-ми? 3 перемноженных измерения должны быть меньше 90. 
-// У нас 90 неповторяющихся эл-ов. 
-// вар1. можно сгенерировать, а потом проверять, но это сложнее
-// вар2. можно заранее взять известные числа, их перемешать и порядку их складывать в массив спиральным методом
-// if else и 4 направления. понимаем в какую сторону движемся и из-за этого увелич или уменьш тот или иной индекс
-
 Console.WriteLine("Напишите количество переменных первой оси: ");
 int i = Convert.ToInt32 (Console.ReadLine());
 Console.WriteLine("Напишите количество переменных второй оси: ");
@@ -21,16 +15,13 @@ int j = Convert.ToInt32 (Console.ReadLine());
 Console.WriteLine("Напишите количество переменных третьей оси: ");
 int k = Convert.ToInt32 (Console.ReadLine());
 int[,,] array = new int[i, j, k];
-//int[ ] arrayInputNumbers =  new int ();
 FillArray(array);
 Print(array,(element, i,j,k)=>$"{element} ");
 Print(array, (element, i,j,k)=>$"{element}({i}, {j}, {k})" );
 Console.WriteLine();
-//StringWithIndex(array); 
 
 void FillArray(int[,,] array)
 {
-    //Random rnd = new Random();
     int count = 10;
     for (int i = 0; i < array.GetLength(0); i++) 
     {
@@ -45,7 +36,7 @@ void FillArray(int[,,] array)
     }
 }
 
-void Print(int[,,] array, Func<int, int, int, int,string> formatter)
+void Print(int[,,] array, Func<int, int, int, int, string> formatter) // Функция принимает значение элемента массива и его индексы (4 int) и возвращает строку string
 {
     for (int i = 0; i < array.GetLength(0); i++) //
     {
