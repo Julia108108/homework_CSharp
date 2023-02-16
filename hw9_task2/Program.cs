@@ -12,7 +12,7 @@ int sum = CallculateSumOfRange(m, n);
 Console.WriteLine($"а вот и ваша сумма {sum}");
 
 
-int CallculateSumOfRange(int m, int n)
+int CallculateSumOfRange(int m, int n) // возвращает число
 {
     if (m < n)
     {
