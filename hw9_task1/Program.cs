@@ -11,10 +11,8 @@ WritePositiveIntsDesc(n);
  
  void WritePositiveIntsDesc (int n)
  {
-    Console.Write(n + ", ");
-    if (n == 1 || n < 0)
-    {
-        return;
-    }
+    Console.Write(n!=1? n + ", " : n); //тернарный оператор работает с 3 операндами. Если n не равно 1, то n +. Если условие не правда, то выводится n
+    if (n <= 1) return;
+
     WritePositiveIntsDesc(n - 1);
  }
